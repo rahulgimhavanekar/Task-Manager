@@ -9,7 +9,7 @@ const Todo = ({ id, title, date, description }) => {
     <div
       className={classes.tile}
       onClick={() => {
-        navigate(`/todo/${id}`);
+        navigate(`/todos/${id}`);
       }}
     >
       <div className={classes.text}>
