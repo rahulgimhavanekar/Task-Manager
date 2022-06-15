@@ -33,6 +33,7 @@ const TodoList = () => {
         return (
           <Todo
             key={todo.id}
+            id={todo.id}
             title={todo.title}
             description={todo.description}
             date={todo.date}

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classes from "./Header.module.css";
 
 const Header = () => {
@@ -7,8 +8,22 @@ const Header = () => {
       <h1 className={classes.logo}>Task Manager</h1>
       <nav className={classes.nav}>
         <ul>
-          <li>All Tasks</li>
-          <li>Add Task</li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? classes.active : "")}
+              to="/"
+            >
+              All Tasks
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? classes.active : "")}
+              to="/new-todo"
+            >
+              Add Task
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

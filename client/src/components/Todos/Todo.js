@@ -1,9 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import classes from "./Todo.module.css";
 
-const Todo = ({ title, date, description }) => {
+const Todo = ({ id, title, date, description }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className={classes.tile}>
+    <div
+      className={classes.tile}
+      onClick={() => {
+        navigate(`/todo/${id}`);
+      }}
+    >
       <div className={classes.text}>
         <h2>{title}</h2>
         <p>{date}</p>

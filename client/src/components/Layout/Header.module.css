@@ -4,15 +4,28 @@
   justify-content: space-between;
   align-items: center;
   background-color: #062c30;
-  color: #f5f5f5;
 }
 
-.nav ul li {
-  list-style: none;
-  font-size: 1.2rem;
-  margin-right: 2rem;
+.logo {
+  color: #f5f5f5;
 }
 
 .nav ul {
   display: flex;
+  list-style: none;
+}
+
+.nav li {
+  font-size: 1.2rem;
+  margin-right: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  margin-bottom: 0.2rem;
+  color: #f5f5f5;
+}
+
+.nav a.active {
+  border-bottom: 2px solid #f5f5f5;
 }
