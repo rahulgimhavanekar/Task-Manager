@@ -1,9 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import convertDate from "../../utils/convertDate";
 import classes from "./Todo.module.css";
 
-const Todo = ({ id, title, date, description }) => {
+const Todo = ({ id, title, date }) => {
   const navigate = useNavigate();
+
+  const myDate = convertDate(date);
 
   return (
     <div
@@ -14,7 +17,7 @@ const Todo = ({ id, title, date, description }) => {
     >
       <div className={classes.text}>
         <h2>{title}</h2>
-        <p>{date}</p>
+        <p>{myDate}</p>
       </div>
       <input type="checkbox" />
     </div>

@@ -1,14 +1,31 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { CREATE_TODO } from "../../actions/actionTypes";
 import classes from "./TodoForm.module.css";
 
 const TodoForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    console.log(title, description);
+    const newTodo = {
+      id: Math.random().toString(),
+      title: title,
+      description: description,
+      date: new Date(),
+    };
+
+    dispatch({ type: CREATE_TODO, payload: newTodo });
+
+    setTitle();
+    setDescription();
+
+    navigate("/");
   };
 
   return (
