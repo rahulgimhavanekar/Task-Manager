@@ -1,10 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import TodoList from "./components/Todos/TodoList";
+import AllTodosPage from "./pages/AllTodosPage";
 
 function App() {
   return (
     <Layout>
-      <TodoList />
+      <Routes>
+        <Route path="/" element={<AllTodosPage />} />
+      </Routes>
     </Layout>
   );
 }
