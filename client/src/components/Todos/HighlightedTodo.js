@@ -1,9 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { DELETE_TODO } from "../../actions/actionTypes";
+import convertDate from "../../utils/convertDate";
 import { PencilSimple, TrashSimple } from "phosphor-react";
 import classes from "./HighlightedTodo.module.css";
-import { DELETE_TODO } from "../../actions/actionTypes";
 
 const HighlightedTodo = (props) => {
   const navigate = useNavigate();
@@ -14,12 +15,14 @@ const HighlightedTodo = (props) => {
     navigate("/");
   };
 
+  const myDate = convertDate(props.date);
+
   return (
     <div className={classes.todo_detail}>
       <div className={classes.heading}>
         <div className={classes.text}>
           <h1>{props.title}</h1>
-          <h3>{props.date}</h3>
+          <h3>{myDate}</h3>
         </div>
         <div className={classes.actions}>
           <button>

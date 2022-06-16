@@ -1,21 +1,23 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getSingleTodo } from "../actions/todoActions";
 import { useParams } from "react-router-dom";
 import HighlightedTodo from "../components/Todos/HighlightedTodo";
 
 const TodoDetailPage = () => {
   const params = useParams();
-  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+  const todo = useSelector((state) => state.todo);
 
-  const todo = todos.find((item) => {
-    return item.id === params.id;
-  });
+  useEffect(() => {
+    dispatch(getSingleTodo(params.id));
+  }, [dispatch, params]);
 
   return (
     <HighlightedTodo
       id={todo.id}
       title={todo.title}
-      date={todo.date}
+      date={todo.createdAt}
       description={todo.description}
     />
   );
