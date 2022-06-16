@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { DELETE_TODO } from "../../actions/actionTypes";
+import { deleteTodo } from "../../actions/todoActions";
 import convertDate from "../../utils/convertDate";
 import { PencilSimple, TrashSimple } from "phosphor-react";
 import classes from "./HighlightedTodo.module.css";
@@ -11,8 +11,12 @@ const HighlightedTodo = (props) => {
   const dispatch = useDispatch();
 
   const deleteHandler = () => {
-    dispatch({ type: DELETE_TODO, payload: props.id });
+    dispatch(deleteTodo(props.id));
     navigate("/");
+  };
+
+  const editHandler = () => {
+    navigate(`/todos/${props.id}/edit`);
   };
 
   const myDate = convertDate(props.date);
@@ -25,7 +29,7 @@ const HighlightedTodo = (props) => {
           <h3>{myDate}</h3>
         </div>
         <div className={classes.actions}>
-          <button>
+          <button onClick={editHandler}>
             <PencilSimple size={24} />
           </button>
           <button onClick={deleteHandler}>

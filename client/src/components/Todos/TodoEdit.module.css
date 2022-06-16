@@ -1,0 +1,59 @@
+.container {
+  width: 50%;
+  margin: 2rem auto;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.control {
+  margin-bottom: 1rem;
+}
+
+.control label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.control input,
+.control textarea {
+  font: inherit;
+  background-color: #f0f0f0;
+  border: 1px solid #c1d1d1;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.control input:focus,
+.control textarea:focus {
+  outline-color: #393e46;
+}
+
+.actions {
+  display: flex;
+  gap: 2rem;
+}
+
+.actions button {
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+  background-color: #e2d784;
+  color: #292929;
+  font: inherit;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 0;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #ebdf8b;
+}

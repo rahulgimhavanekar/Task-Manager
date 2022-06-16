@@ -15,7 +15,7 @@ const TodoDetailPage = () => {
 
   return (
     <HighlightedTodo
-      id={todo.id}
+      id={todo._id}
       title={todo.title}
       date={todo.createdAt}
       description={todo.description}
